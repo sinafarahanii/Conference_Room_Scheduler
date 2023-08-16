@@ -7,13 +7,13 @@ class Meeting(BaseModel):
         json_schema_extra = {
             "examples": [
                 {
-                    "start_date": "2023-10-23 17:00",
-                    "end_date": "2023-10-23 19:00",
+                    "start_time": "2023-10-23 17:00",
+                    "end_time": "2023-10-23 19:00",
                     "seats_required": "50"
                 }
             ]
         }
-    start_date: datetime
-    end_date: datetime
+    start_time: datetime
+    end_time: datetime
     seats_required: int
 
