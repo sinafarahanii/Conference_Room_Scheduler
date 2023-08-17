@@ -29,9 +29,13 @@ def schedule_meeting(start_time: datetime or None = Query(default=None, gt=datet
     for info in (start_time, end_time, seats_required):
         if info is None:
             raise HTTPException(status_code=400, detail="You must provide all the parameters!!")
-
+    # check dates validation
     if end_time < start_time:
         raise HTTPException(status_code=422, detail="End_time can't be before the start_time!!")
+
+    if end_time.date() != start_time.date():
+        raise HTTPException(status_code=422, detail="start time and end time should be in a same date!!")
+
     # check if seats_required is greater than conference room capacity
     model = cp_model.CpModel()
     solver = cp_model.CpSolver()
