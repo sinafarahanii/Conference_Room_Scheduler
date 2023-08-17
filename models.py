@@ -3,6 +3,10 @@ from pydantic import BaseModel, Field, SecretStr
 
 
 class Meeting(BaseModel):
+
+    """Representation of a meeting in the system"""
+
+    # displaying an example for the user
     class Config:
         json_schema_extra = {
             "examples": [
@@ -13,6 +17,7 @@ class Meeting(BaseModel):
                 }
             ]
         }
+    # meeting properties
     start_time: datetime
     end_time: datetime
     seats_required: int
