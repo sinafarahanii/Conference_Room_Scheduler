@@ -9,7 +9,7 @@ FastAPI is a modern, high performance, easy to use web framework for building AP
 
 Note: It is assumed that you have python installed on your system.
 
-In order yo use pip commands, you can make a virtual environment in your directory by running:
+In order to use pip commands, you can make a virtual environment in your directory by running:
 
     python -m venv venv
 then activate it by running: (on windows)
